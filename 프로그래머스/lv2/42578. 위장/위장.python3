@@ -1,0 +1,16 @@
+from itertools import combinations
+
+def solution(clothes):   
+    dic = {}
+    for i in clothes:
+        if i[1] not in dic:
+            dic[i[1]] = 1
+        else:
+            dic[i[1]] += 1
+            
+    lst = list(dic.values())
+    ans = 1
+    for i in lst:
+        ans = ans * (i + 1)
+    
+    return ans - 1
