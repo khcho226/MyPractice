@@ -14,8 +14,8 @@ def solution(genres, plays):
         else:
             dic2[g] += p
         
-    for (a, b) in sorted(dic2.items(), key=lambda x:x[1], reverse=True):
-        for (i, p) in sorted(dic1[a], key=lambda x:x[1], reverse=True)[:2]:
+    for a, b in sorted(dic2.items(), key=lambda x:x[1], reverse=True):
+        for i, p in sorted(dic1[a], key=lambda x:x[1], reverse=True)[:2]:
             ans.append(i)
         
     return ans
