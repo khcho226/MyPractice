@@ -3,20 +3,14 @@ from collections import deque
 def solution(pri, loc):
     cnt = 0
     que = deque(enumerate(pri))
-
-    while que:
-        pr = 0
+    
+    while True:
         now = que.popleft()
         
-        for i in range(len(que)):
-            if now[1] < que[i][1]:
-                que.append(now)
-                pr = 1
-                break
+        if any(now[1] < q[1] for q in que):
+            que.append(now)
                 
-        if pr == 0:
+        else:
             cnt += 1
             if now[0] == loc:
                 return cnt
-
-    return cnt
