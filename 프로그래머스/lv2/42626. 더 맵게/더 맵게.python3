@@ -1,0 +1,21 @@
+import heapq
+
+def solution(sco, K):
+    heapq.heapify(sco)
+    ans = 0
+    
+    while True:
+        if len(sco) == 1:
+            a = heapq.heappop(sco)
+            if a < K:
+                return -1
+            else:
+                return ans
+        
+        a = heapq.heappop(sco)
+        if a >= K:
+            return ans
+        
+        ans += 1
+        heapq.heappush(sco, a + 2 * heapq.heappop(sco))
+        
