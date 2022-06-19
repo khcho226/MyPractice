@@ -1,9 +1,8 @@
 def solution(citations):
     citations.sort()
-    ans = 0
     
     for i in range(len(citations)):
-        if ans <= len(citations) - i:
-            ans = min(citations[i], len(citations) - i)
+        if citations[i] >= len(citations) - i:
+            return len(citations) - i
     
-    return ans
+    return 0
