@@ -1,0 +1,22 @@
+import heapq
+
+def solution(jobs):
+    answer, num, start, now = 0, 0, -1, 0
+    heap = []
+    
+    while num < len(jobs):
+        for i in jobs:
+            if start < i[0] <= now:
+                heapq.heappush(heap, [i[1], i[0]])
+        
+        if len(heap) != 0:
+            pro = heapq.heappop(heap)
+            start = now
+            now += pro[0]
+            answer += now - pro[1]
+            num += 1
+        
+        else:
+            now += 1
+    
+    return int(answer / len(jobs))
