@@ -12,7 +12,8 @@ def solution(operations):
         else:
             if len(heap) != 0:
                 if b == "1":
-                    heap.pop()
+                    heap = heapq.nlargest(len(heap), heap)[1:]
+                    heapq.heapify(heap)
                 else:
                     heapq.heappop(heap)
         
