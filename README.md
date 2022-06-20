@@ -2,12 +2,8 @@
 
 ### 백준
 
-Bronze
-<br/>Silver
-<br/>Gold
+Bronze + Silver + Gold
 
 ### 프로그래머스
 
-lv1
-<br/>lv2
-<br/>lv3
+lv1 + lv2 + lv3
