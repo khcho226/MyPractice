@@ -1,14 +1,14 @@
 from itertools import permutations
 
 def solution(numbers):
-    arr = list(numbers)
+    numbers = list(numbers)
     per = []
-    for i in range(1, len(arr) + 1):
-        per += list(permutations(arr, i))
-    arr = [int("".join(p)) for p in per]
+    for i in range(1, len(numbers) + 1):
+        per += list(permutations(numbers, i))
+    numbers = set([int("".join(p)) for p in per])
     
     ans = []
-    for i in arr:
+    for i in numbers:
         check = True
         if i < 2:
             continue
@@ -21,4 +21,4 @@ def solution(numbers):
         if check == True:
             ans.append(i)
     
-    return len(set(ans))
+    return len(ans)
