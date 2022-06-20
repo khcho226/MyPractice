@@ -1,20 +1,8 @@
 def solution(brown, yellow):
-    row, col = 1, 1
-    
-    while True:
-        while True:
-            if row * col == yellow:
-                break
-                
-            row += 1
-
-            if row * col > yellow:
-                row = col + 1
-                col += 1
-        
-        if 2 * (row + col) + 4 == brown:
-            return [row + 2, col + 2]
-        
-        row = col + 1
-        col += 1
-        
+    for i in range(1, yellow + 1):
+        if yellow % i == 0:
+            a = yellow // i
+            b = yellow // a
+            
+            if 2 * (a + b) + 4 == brown:
+                return [a + 2, b + 2]
