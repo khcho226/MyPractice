@@ -1,0 +1,20 @@
+def solution(brown, yellow):
+    row, col = 1, 1
+    
+    while True:
+        while True:
+            if row * col == yellow:
+                break
+                
+            row += 1
+
+            if row * col > yellow:
+                row = col + 1
+                col += 1
+        
+        if 2 * (row + col) + 4 == brown:
+            return [row + 2, col + 2]
+        
+        row = col + 1
+        col += 1
+        
