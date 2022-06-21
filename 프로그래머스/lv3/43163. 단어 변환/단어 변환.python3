@@ -1,0 +1,26 @@
+from collections import deque
+
+def solution(begin, target, words):
+    answer = 0
+    visited = [False] * len(words)
+    que = deque()
+    que.append([begin, 0])
+    
+    while que:      
+        word, cnt = que.popleft()
+        if word == target:
+            answer = cnt
+            break
+            
+        for i in range(len(words)):
+            temp = 0
+            if not visited[i]:
+                for j in range(len(begin)):
+                    if word[j] != words[i][j]:
+                        temp += 1
+                
+                if temp == 1:
+                    que.append([words[i], cnt + 1])
+                    visited[i] = True
+        
+    return answer
