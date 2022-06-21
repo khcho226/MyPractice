@@ -1,0 +1,20 @@
+def loop(arr, num, depth, sum, target):
+    global answer
+    sum += num
+    
+    if depth == len(arr) - 1:
+        if sum == target:
+            answer += 1
+        
+    else:
+        loop(arr, arr[depth + 1], depth + 1, sum, target)
+        loop(arr, -arr[depth + 1], depth + 1, sum, target)
+
+def solution(numbers, target):
+    global answer
+    answer = 0
+    lst = []
+    loop(numbers, numbers[0], 0, 0, target)
+    loop(numbers, -numbers[0], 0, 0, target)
+            
+    return answer
