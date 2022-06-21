@@ -1,21 +1,7 @@
-answer = 0
-
-def dfs(numbers, num, depth, value, target):
-    global answer
-    value += num
-    
-    if depth == len(numbers) - 1:
-        if value == target:
-            answer += 1
-        
-    else:
-        dfs(numbers, numbers[depth + 1], depth + 1, value, target)
-        dfs(numbers, - numbers[depth + 1], depth + 1, value, target)
+from itertools import product
 
 def solution(numbers, target):
-    global answer
+    lst = [(x, - x) for x in numbers]
+    lst = list(map(sum, product(*lst)))
     
-    dfs(numbers, numbers[0], 0, 0, target)
-    dfs(numbers, - numbers[0], 0, 0, target)
-            
-    return answer
+    return lst.count(target)
