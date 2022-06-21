@@ -5,7 +5,6 @@ def solution(people, limit):
     
     while i <= j:
         answer += 1
-        
         if people[i] + people[j] <= limit:
             i += 1
         j -= 1
