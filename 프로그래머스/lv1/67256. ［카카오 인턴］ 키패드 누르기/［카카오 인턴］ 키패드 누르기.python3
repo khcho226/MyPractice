@@ -1,0 +1,41 @@
+def solution(numbers, hand):
+    answer = ""
+    left = [1, 4, 7]
+    right = [3, 6, 9]
+    fleft, fright = (3, 0), (3, 2)
+        
+    for i in numbers:
+        if i in left:
+            answer += "L"
+            fleft = ((i - 1) // 3, (i - 1) % 3)
+            
+        elif i in right:
+            answer += "R"
+            fright = ((i - 1) // 3, (i - 1) % 3)
+        
+        else:
+            if i == 0:
+                des = (3, 1)
+            else:
+                des = ((i - 1) // 3, (i - 1) % 3)
+            
+            dleft = abs(des[1] - fleft[1]) + abs(des[0] - fleft[0])
+            dright = abs(des[1] - fright[1]) + abs(des[0] - fright[0])
+            
+            if dleft > dright:
+                answer += "R"
+                fright = des
+                
+            elif dleft < dright:
+                answer += "L"
+                fleft = des
+            
+            else:
+                if hand == "left":
+                    answer += "L"
+                    fleft = des
+                else:
+                    answer += "R"
+                    fright = des
+
+    return answer
