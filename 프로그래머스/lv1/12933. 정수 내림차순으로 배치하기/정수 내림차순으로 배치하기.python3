@@ -1,0 +1,4 @@
+def solution(n):
+    answer = 0
+    arr = list(map(str, sorted([int(x) for x in str(n)], reverse=True)))
+    return int("".join(arr))
