@@ -1,5 +1,6 @@
 def solution(lottos, win_nums):
     correct, zero = 0, 0
+    rank = [6, 6, 5, 4, 3, 2, 1]
     
     for i in lottos:
         if i in win_nums:
@@ -7,10 +8,4 @@ def solution(lottos, win_nums):
         if i == 0:
             zero += 1
     
-    if correct != 0:
-        return [7 - correct - zero, 7 - correct]
-    else:
-        if zero != 0:
-            return [7 - correct - zero, 6 - correct]
-        else:
-            return [6 - correct - zero, 6 - correct]
+    return rank[correct + zero], rank[correct]
