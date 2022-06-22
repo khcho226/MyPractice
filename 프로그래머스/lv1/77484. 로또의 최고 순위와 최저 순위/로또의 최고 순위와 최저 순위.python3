@@ -5,7 +5,7 @@ def solution(lottos, win_nums):
     for i in lottos:
         if i in win_nums:
             correct += 1
-        if i == 0:
+        elif i == 0:
             zero += 1
     
     return rank[correct + zero], rank[correct]
