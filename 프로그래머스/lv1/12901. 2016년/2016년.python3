@@ -1,0 +1,9 @@
+def solution(a, b):
+    answer = ''
+    date = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    day = ["THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"]
+    
+    for i in range(a - 1):
+        b += date[i]
+    
+    return day[b % 7]
