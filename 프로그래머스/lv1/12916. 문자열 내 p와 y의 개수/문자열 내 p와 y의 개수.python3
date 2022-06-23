@@ -1,0 +1,13 @@
+def solution(s):
+    arr = list(s.lower())
+    nump, numy = 0, 0
+    
+    for i in arr:
+        if i == "p":
+            nump += 1
+        elif i == "y":
+            numy += 1
+    
+    if nump == numy:
+        return True
+    return False
