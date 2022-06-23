@@ -1,13 +1,8 @@
-def gcd(a, b):
+def solution(n, m):
+    a, b = min(n, m), max(n, m)
+    mul = a * b
+    
     while b:
         a, b = b, a % b
         
-    return a
-
-def lcm(a, b):
-    return (a * b) // gcd(a, b)
-
-def solution(n, m):
-    a, b = min(n, m), max(n, m)  
-    
-    return [gcd(a, b), lcm(a, b)]
+    return [a, mul // a]
