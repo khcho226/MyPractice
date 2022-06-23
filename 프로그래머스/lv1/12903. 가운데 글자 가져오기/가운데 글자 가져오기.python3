@@ -1,8 +1,2 @@
-def solution(s):
-    arr = list(s)
-    n = len(arr)
-    
-    if n % 2 == 1:
-        return arr[n // 2]
-    
-    return "".join(arr[n // 2 - 1 : n // 2 + 1])
+def solution(s): 
+    return "".join(s[(len(s) - 1) // 2 : len(s) // 2 + 1])
