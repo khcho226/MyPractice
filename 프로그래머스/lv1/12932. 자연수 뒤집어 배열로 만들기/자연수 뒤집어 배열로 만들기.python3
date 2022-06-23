@@ -1,4 +1,2 @@
-def solution(n):
-    answer = [int(x) for x in str(n)]
-    
-    return answer[::-1]
+def solution(n):   
+    return [int(x) for x in str(n)][::-1]
