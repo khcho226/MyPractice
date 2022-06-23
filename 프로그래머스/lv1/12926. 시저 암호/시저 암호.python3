@@ -7,7 +7,7 @@ def solution(s, n):
         
         num = ord(arr[i]) + n
         if (ord(arr[i]) <= 90 and num > 90) or (ord(arr[i]) <= 122 and num > 122):
-            num -=26
+            num -= 26
         
         arr[i] = chr(num)
         
