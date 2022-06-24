@@ -1,0 +1,6 @@
+def solution(price, money, count):
+    num  = price * sum(range(1, count + 1))
+    
+    if num - money > 0:
+        return num - money
+    return 0
