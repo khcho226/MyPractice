@@ -1,0 +1,14 @@
+def solution(d, budget):
+    num = 0
+    d.sort(reverse=True)
+    
+    while d:
+        if d[-1] <= budget:
+            num += 1
+            budget -= d[-1]
+            d.pop()
+        
+        else:
+            break
+          
+    return num
