@@ -1,0 +1,28 @@
+def solution(n, arr1, arr2):
+    maze = [[0] * n for _ in range(n)]
+    
+    for i in range(n):
+        num1 = bin(arr1[i])[2:]
+        while len(num1) < n:
+            num1 = "0" + num1
+        
+        num2 = bin(arr2[i])[2:]
+        while len(num2) < n:
+            num2 = "0" + num2
+            
+        for j in range(n):
+            if num1[j] == "1" or num2[j] == "1":
+                maze[i][j] = 1
+                
+    answer = []
+    for i in range(n):
+        word = ""
+        for j in range(n):
+            if maze[i][j] == 1:
+                word += "#"
+            else:
+                word += " "
+        
+        answer.append(word)
+        
+    return answer
