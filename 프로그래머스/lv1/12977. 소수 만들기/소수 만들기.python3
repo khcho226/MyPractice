@@ -1,16 +1,12 @@
 from itertools import combinations
 
 def solution(nums):
-    answer = 0
-    arr = []
-
+    answer = 0        
     for i in combinations(nums, 3):
-        arr.append(sum(i))
-        
-    for i in arr:
-        check = True
-        for j in range(2, int(i ** 0.5) + 1):
-            if i % j == 0:
+        num = sum(i)
+        check = True    
+        for j in range(2, int(num ** 0.5) + 1):
+            if num % j == 0:
                 check = False
                 break
         
