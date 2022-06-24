@@ -1,13 +1,2 @@
-def solution(sizes):
-    for i in range(len(sizes)):
-        if sizes[i][1] > sizes[i][0]:
-            temp = sizes[i][0]
-            sizes[i][0] = sizes[i][1]
-            sizes[i][1] = temp
-            
-    max0, max1 = 0, 0
-    for i in sizes:
-        max0 = max(max0, i[0])
-        max1 = max(max1, i[1])
-        
-    return max0 * max1
+def solution(sizes):   
+    return max(max(x) for x in sizes) * max(min(x) for x in sizes)
