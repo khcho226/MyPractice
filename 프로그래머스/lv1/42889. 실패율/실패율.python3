@@ -1,0 +1,14 @@
+from collections import Counter
+
+def solution(N, stages):
+    answer = [[i, 0] for i in range(1, N + 1)]
+    arr = Counter(stages)
+    
+    for i in range(1, N + 1):
+        if i in arr:
+            num = [x for x in stages if x >= i]
+            answer[i - 1][1] = arr[i] / len(num)
+            
+    answer.sort(key=lambda x: (-x[1], x[0]))
+       
+    return [x for x, y in answer]
