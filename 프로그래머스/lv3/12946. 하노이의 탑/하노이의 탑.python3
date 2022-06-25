@@ -1,0 +1,14 @@
+def hanoi(a, b, c, n, arr):
+    if n == 1:
+        arr.append([a, c])
+        return
+    
+    hanoi(a, c, b, n - 1, arr)
+    arr.append([a, c])
+    hanoi(b, a, c, n - 1, arr)
+
+def solution(n):
+    arr = []
+    hanoi(1, 2, 3, n, arr)
+    
+    return arr
