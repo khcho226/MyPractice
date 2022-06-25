@@ -8,6 +8,4 @@ def solution(s):
                 return False
             stack.pop()
 
-    if stack:
-        return False
-    return True
+    return False if stack else True
