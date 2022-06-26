@@ -1,0 +1,16 @@
+def solution(s):
+    s = s.lower()
+    answer = ""
+    check = True
+    
+    for i in list(s):
+        if check:
+            check = False
+            i = i.upper()
+            
+        answer += i
+        
+        if i == " ":
+            check = True
+    
+    return answer
