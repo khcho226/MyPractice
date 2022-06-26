@@ -1,0 +1,18 @@
+def solution(begin, end):
+    answer = [x for x in range(begin, end + 1)]
+        
+    for i in range(len(answer)):
+        for j in range(2, int(answer[i] ** 0.5) + 1):
+            if answer[i] / j >= 10 ** 7:
+                continue
+                
+            if answer[i] % j == 0:
+                answer[i] = answer[i] / j
+                break
+        else:
+             answer[i] = 1   
+    
+    if begin == 1:
+        answer[0] = 0
+    
+    return answer
