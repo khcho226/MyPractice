@@ -6,9 +6,9 @@ def solution(begin, end):
             if answer[i] % j == 0:
                 if answer[i] / j > 10 ** 7:
                     continue
-                    
-                answer[i] = answer[i] / j
-                break
+                else:   
+                    answer[i] = answer[i] / j
+                    break
         else:
              answer[i] = 1   
     
