@@ -1,0 +1,19 @@
+import math
+
+def solution(n, k):
+    arr = [i + 1 for i in range(n)]
+    stack = []
+    
+    while arr:
+        num = math.factorial(n - 1)
+        idx = k // num
+        k = k % num
+        
+        if k == 0:
+            stack.append(arr.pop(idx - 1))
+        else:
+            stack.append(arr.pop(idx))
+        
+        n -= 1
+    
+    return stack
