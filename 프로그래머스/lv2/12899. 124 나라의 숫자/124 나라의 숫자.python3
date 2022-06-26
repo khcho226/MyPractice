@@ -1,0 +1,10 @@
+def solution(n):
+    num = ""
+    arr = ["1", "2", "4"]
+    
+    while n > 0:
+        n -= 1
+        num = arr[n % 3] + num
+        n //= 3
+        
+    return num
