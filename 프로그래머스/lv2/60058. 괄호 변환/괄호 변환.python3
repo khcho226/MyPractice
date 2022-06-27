@@ -36,18 +36,15 @@ def solution(p):
         if correct(u):
             answer = u + solution(v)
         else:
-            temp = "("
-            temp += solution(v)
-            temp += ")"
             u = u[1:-1]
-            temp2 = ""
+            temp = "(" + solution(v) + ")"
             
             for i in range(len(u)):
                 if u[i] == "(":
-                    temp2 += ")"
+                    temp += ")"
                 else:
-                    temp2 += "("
+                    temp += "("
             
-            return temp + temp2
+            return temp
         
     return answer
