@@ -1,0 +1,19 @@
+def solution(str1, str2):
+    str1, str2 = str1.upper(), str2.upper()
+    stack = []
+    
+    for i in range(len(str1) - 1):
+        if str1[i].isalpha() and str1[i + 1].isalpha():
+            stack.append(str1[i] + str1[i + 1])
+    
+    num1, num2 = len(stack), 0
+    
+    for i in range(len(str2) - 1):
+        if str2[i].isalpha() and str2[i + 1].isalpha():            
+            if str2[i] + str2[i + 1] not in stack:
+                num1 += 1
+            else:
+                num2 += 1
+                stack.remove(str2[i] + str2[i + 1])
+
+    return int(num2 / num1 * 65536) if num1 != 0 else 65536
