@@ -1,0 +1,11 @@
+from itertools import product
+
+def solution(word):
+    lst = ["A", "E", "I", "O", "U"]
+    words = []
+    
+    for i in range(1, 6):
+        for x in product(lst, repeat=i):
+            words.append("".join(list(x)))
+    
+    return sorted(words).index(word) + 1
