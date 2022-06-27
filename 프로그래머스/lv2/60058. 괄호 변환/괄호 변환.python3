@@ -1,0 +1,53 @@
+answer = ""
+
+def correct(x):
+    stack = []
+    
+    for i in x:
+        if i == "(":
+            stack.append(0)
+        else:
+            if not stack:
+                return False
+            else:
+                stack.pop()
+    
+    return True if len(stack) == 0 else False
+
+def solution(p):
+    global answer
+    
+    if correct(p):
+        return p
+    else:
+        cnt1 = cnt2 = 0
+        
+        for i in range(len(p)):
+            if p[i] == "(":
+                cnt1 += 1
+            else:
+                cnt2 += 1
+                
+            if cnt1 == cnt2:
+                u = p[:i + 1]
+                v = p[i + 1:]
+                break
+        
+        if correct(u):
+            answer = u + solution(v)
+        else:
+            temp = "("
+            temp += solution(v)
+            temp += ")"
+            u = u[1:-1]
+            temp2 = ""
+            
+            for i in range(len(u)):
+                if u[i] == "(":
+                    temp2 += ")"
+                else:
+                    temp2 += "("
+            
+            return temp + temp2
+        
+    return answer
