@@ -1,0 +1,15 @@
+def lcm(x, y):
+    mul = x * y
+    
+    while y:
+        x, y = y, x % y
+    
+    return mul // x
+
+def solution(arr):
+    temp = arr[0]
+    
+    for i in range(1, len(arr)):
+        temp = lcm(arr[i], temp)
+    
+    return temp
