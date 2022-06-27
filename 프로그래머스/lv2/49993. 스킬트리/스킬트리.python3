@@ -1,0 +1,15 @@
+def solution(skill, skill_trees):
+    cnt = 0
+    
+    for i in range(len(skill_trees)):
+        temp = list(skill)
+        
+        for j in range(len(skill_trees[i])):
+            if skill_trees[i][j] in temp:
+                if skill_trees[i][j] == temp[0]:
+                    temp.pop(0)
+                else:
+                    cnt += 1
+                    break                
+    
+    return len(skill_trees) - cnt
