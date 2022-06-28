@@ -23,7 +23,6 @@ def correct(x):
 
     return True if not stack else False
         
-
 def solution(s):
     answer = 0
     
