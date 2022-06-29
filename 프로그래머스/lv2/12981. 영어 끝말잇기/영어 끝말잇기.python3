@@ -1,13 +1,8 @@
 def solution(n, words):
-    word = []
-
-    for i in range(len(words)):
-        if i == 0:
-            word.append(words[i])
+    for i in range(1, len(words)):
+        if words[i] not in words[:i] and words[i][0] == words[i - 1][-1]:
+            continue
         else:
-            if words[i] not in word and words[i][0] == word[-1][-1]:
-                word.append(words[i])
-            else:
-                return [i % n + 1, i // n + 1]
+            return [i % n + 1, i // n + 1]
     
     return [0, 0]
