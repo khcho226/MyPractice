@@ -1,0 +1,21 @@
+def solution(s):
+    arr = []
+    dic = {} 
+    temp = ""
+    
+    for i in s:
+        if i.isdigit():
+            temp += i
+        else:
+            if len(temp) != 0:
+                if int(temp) not in dic:
+                    dic[int(temp)] = 1
+                else:
+                    dic[int(temp)] += 1
+            
+            temp = ""
+            
+    for a, b in sorted(dic.items(), key=lambda x: x[1], reverse=True):
+        arr.append(a)
+    
+    return  arr
