@@ -17,11 +17,11 @@ def solution(exp):
         if i.isdigit():
             temp += i
         else:
-            lst.append(int(temp))
+            lst.append(temp)
             lst.append(i)
             temp = ""
     
-    lst.append(int(temp))
+    lst.append(temp)
     maxi = 0
     
     for i in permutations(tool, len(tool)):
