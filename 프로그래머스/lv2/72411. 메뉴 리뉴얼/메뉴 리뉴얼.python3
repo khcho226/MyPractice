@@ -1,25 +1,17 @@
 from itertools import combinations
+import collections
 
 def solution(orders, course):
     answer = []
     
     for i in course:
-        dic = {}
+        lst = []
         
         for j in orders:
             for k in combinations(j, i):
-                temp = "".join(sorted(k))
-                
-                if temp not in dic:
-                    dic[temp] = 1
-                else:
-                    dic[temp] += 1
+                lst.append("".join(sorted(k)))
         
-        temp = 2
-        
-        for j in sorted(dic.items(), key=lambda x:x[1], reverse=True):
-            if j[1] >= temp:
-                temp = j[1]
-                answer.append(j[0])
-        
+        lst = collections.Counter(lst).most_common()
+        answer += [a for a, b in lst if b >= 2 and b == lst[0][1]]
+
     return sorted(answer)
