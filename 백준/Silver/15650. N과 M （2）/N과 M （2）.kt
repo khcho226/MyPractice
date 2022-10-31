@@ -24,10 +24,8 @@ fun dfs(arr: IntArray, depth: Int) {
         return
     }
 
-    for (i in 0 until n) {
-        if (i + 1 > arr[depth]) {
-            arr[depth + 1] = i + 1
-            dfs(arr, depth + 1)
-        }
+    for (i in arr[depth] until n) {
+        arr[depth + 1] = i + 1
+        dfs(arr, depth + 1)
     }
 }
