@@ -1,8 +1,9 @@
 import java.io.*
 import java.util.*
 
-private var n = 0
-private var m = 0
+var n = 0
+var m = 0
+val result = StringBuilder()
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     val token = StringTokenizer(readLine())
@@ -10,14 +11,13 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     n = token.nextToken().toInt()
     m = token.nextToken().toInt()
     dfs(BooleanArray(n), IntArray(m), 0)
+    println(result)
 }
 
 fun dfs(isVisited: BooleanArray, arr: IntArray, depth: Int) {
     if (depth == m) {
-        val result = StringBuilder()
-
         arr.forEach { result.append(it).append(" ") }
-        println(result)
+        result.append("\n")
         return
     }
 
