@@ -9,24 +9,24 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
 
     n = token.nextToken().toInt()
     m = token.nextToken().toInt()
-    dfs(BooleanArray(n), IntArray(n), 0)
+    dfs(BooleanArray(n), IntArray(m), 0)
 }
 
 fun dfs(isVisited: BooleanArray, arr: IntArray, depth: Int) {
     if (depth == m) {
-        for (i in 0 until m) {
-            print("${arr[i]} ")
-        }
+        val result = StringBuilder()
 
-        println()
-    } else {
-        for (i in 0 until n) {
-            if (isVisited[i].not()) {
-                isVisited[i] = true
-                arr[depth] = i + 1
-                dfs(isVisited, arr, depth + 1)
-                isVisited[i] = false
-            }
+        arr.forEach { result.append(it).append(" ") }
+        println(result)
+        return
+    }
+
+    for (i in 0 until n) {
+        if (isVisited[i].not()) {
+            isVisited[i] = true
+            arr[depth] = i + 1
+            dfs(isVisited, arr, depth + 1)
+            isVisited[i] = false
         }
     }
 }
