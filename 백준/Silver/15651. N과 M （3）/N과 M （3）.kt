@@ -16,7 +16,7 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
 
 fun dfs(arr: IntArray, depth: Int) {
     if (depth == m) {
-        arr.forEach { result.append("$it ") }
+        arr.forEach { result.append(it).append(" ") }
         result.append("\n")
         return
     }
