@@ -5,11 +5,13 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     var token = StringTokenizer(readLine())
     val n = token.nextToken().toInt()
     val m = token.nextToken().toInt()
-    val arr = Array(n) { IntArray(n + 1) }
+    val arr = Array(n + 1) { IntArray(n + 1) }
 
     repeat(n) { row ->
         token = StringTokenizer(readLine())
-        repeat(n) { arr[row][it + 1] = arr[row][it] + token.nextToken().toInt() }
+        repeat(n) { col ->
+            arr[row + 1][col + 1] = arr[row + 1][col] + arr[row][col + 1] - arr[row][col] + token.nextToken().toInt()
+        }
     }
 
     val answer = StringBuilder()
@@ -17,14 +19,12 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     repeat(m) {
         token = StringTokenizer(readLine())
 
-        val x1 = token.nextToken().toInt() - 1
-        val y1 = token.nextToken().toInt() - 1
+        val x1 = token.nextToken().toInt()
+        val y1 = token.nextToken().toInt()
         val x2 = token.nextToken().toInt()
         val y2 = token.nextToken().toInt()
-        var temp = 0
 
-        repeat(x2 - x1) { temp += arr[x1 + it][y2] - arr[x1 + it][y1] }
-        answer.append("${temp}\n")
+        answer.append("${arr[x2][y2] + arr[x1 - 1][y1 - 1] - arr[x2][y1 - 1] - arr[x1 - 1][y2]}\n")
     }
     println(answer)
 }
