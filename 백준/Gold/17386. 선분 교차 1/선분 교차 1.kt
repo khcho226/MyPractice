@@ -24,9 +24,14 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     }
 }
 
-fun ccw(x1: Long, y1: Long, x2: Long, y2: Long, x3: Long, y3: Long): Int =
-    if (x1 * y2 + x2 * y3 + x3 * y1 - y1 * x2 - y2 * x3 - y3 * x1 < 0) {
+fun ccw(x1: Long, y1: Long, x2: Long, y2: Long, x3: Long, y3: Long): Int {
+    val calc = x1 * y2 + x2 * y3 + x3 * y1 - y1 * x2 - y2 * x3 - y3 * x1
+
+    return if (calc > 0) {
         1
+    } else if (calc == 0L) {
+        0
     } else {
         -1
     }
+}
