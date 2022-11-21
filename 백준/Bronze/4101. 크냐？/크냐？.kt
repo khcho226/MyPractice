@@ -1,7 +1,11 @@
-import java.io.*
-import java.util.*
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.lang.StringBuilder
+import java.util.StringTokenizer
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
+    val answer = StringBuilder()
+
     while (true) {
         val token = StringTokenizer(readLine())
         val a = token.nextToken().toInt()
@@ -10,9 +14,11 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
         if (a == 0 && b == 0) {
             break
         } else if (a > b) {
-            println("Yes")
+            answer.append("Yes\n")
         } else {
-            println("No")
+            answer.append("No\n")
         }
     }
+
+    println(answer)
 }
