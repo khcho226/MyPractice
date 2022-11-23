@@ -8,27 +8,27 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     repeat(StringTokenizer(readLine()).nextToken().toInt()) {
         val p = StringTokenizer(readLine()).nextToken().toString()
         val n = StringTokenizer(readLine()).nextToken().toInt()
-        val list = ArrayDeque(StringTokenizer(readLine(), "[],").run { List(n) { nextToken() }})
+        val arr = ArrayDeque(StringTokenizer(readLine(), "[],").run { List(n) { nextToken() }})
         var rCount = 0
 
         p.forEach {
             if (it == 'R') {
                 rCount++
-            } else if (list.isEmpty()) {
+            } else if (arr.isEmpty()) {
                 answer.append("error\n")
                 return@repeat
             } else if (rCount % 2 == 0) {
-                list.removeFirst()
+                arr.removeFirst()
             } else {
-                list.removeLast()
+                arr.removeLast()
             }
         }
 
         if (rCount % 2 == 1) {
-            list.reverse()
+            arr.reverse()
         }
 
-        answer.append("[${list.joinToString(",")}]\n")
+        answer.append("[${arr.joinToString(",")}]\n")
     }
 
     println(answer)
