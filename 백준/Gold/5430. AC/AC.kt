@@ -1,5 +1,6 @@
 import java.io.*
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     val answer = StringBuilder()
@@ -7,17 +8,15 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     repeat(StringTokenizer(readLine()).nextToken().toInt()) {
         val p = StringTokenizer(readLine()).nextToken().toString()
         val n = StringTokenizer(readLine()).nextToken().toInt()
-        val list = StringTokenizer(readLine()).nextToken().toString().replace("[", "").replace("]", "").split(",").toMutableList()
+        val list = ArrayDeque(StringTokenizer(readLine(), "[],").run { List(n) { nextToken() }})
         var rCount = 0
-
-        if (p.count { it == 'D' } > n) {
-            answer.append("error\n")
-            return@repeat
-        }
 
         p.forEach {
             if (it == 'R') {
                 rCount++
+            } else if (list.isEmpty()) {
+                answer.append("error\n")
+                return@repeat
             } else if (rCount % 2 == 0) {
                 list.removeFirst()
             } else {
