@@ -8,12 +8,13 @@ class Solution {
             
             if (list.any { now.value < it.value }) {
                 list.add(now)
-            } else {
-                cnt++
+                continue
+            }
+            
+            cnt++
                 
-                if (now.index == location) {
-                    break
-                }
+            if (now.index == location) {
+                break
             }
         }
         
