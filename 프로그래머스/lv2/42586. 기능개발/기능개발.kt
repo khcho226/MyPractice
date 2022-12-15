@@ -15,9 +15,10 @@ class Solution {
                     }
                     
                     max = it
-                } else {
-                    cnt++
+                    return@forEach
                 }
+
+                cnt++
             }
     
         return arr.plus(cnt)
