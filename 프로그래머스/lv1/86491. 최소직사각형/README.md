@@ -1,14 +1,14 @@
 # [level 1] 최소직사각형 - 86491 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/86491) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/86491?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 11.3 MB, 시간: 3.06 ms
+메모리: 71.9 MB, 시간: 18.52 ms
 
 ### 구분
 
-코딩테스트 연습 > 위클리 챌린지
+코딩테스트 연습 > 완전탐색
 
 ### 채점결과
 
