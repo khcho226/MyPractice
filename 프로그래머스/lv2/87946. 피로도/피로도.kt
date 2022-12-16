@@ -8,12 +8,12 @@ class Solution {
     }
     
     fun backtracking(k: Int, dungeons: Array<IntArray>, visited: BooleanArray, cnt: Int) {
-        if (cnt > ans) {
+        if (ans < cnt) {
             ans = cnt
         }
         
         dungeons.forEachIndexed { idx, it ->
-            if (visited[idx] == false && k >= it[0]) {
+            if (visited[idx].not() && k >= it[0]) {
                 visited[idx] = true
                 backtracking(k - it[1], dungeons, visited, cnt + 1)
                 visited[idx] = false
