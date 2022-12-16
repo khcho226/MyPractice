@@ -14,8 +14,10 @@ class Solution {
             }
             score
         }.let { arr ->
-            arr.withIndex().filter { it.value == arr.maxOrNull() }
-                .map { it.index + 1 }.toIntArray()
+            arr.withIndex()
+                .filter { it.value == arr.maxOrNull() }
+                .map { it.index + 1 }
+                .toIntArray()
         }
     }
 }
