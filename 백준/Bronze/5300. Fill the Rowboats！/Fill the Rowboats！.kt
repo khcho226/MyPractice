@@ -2,16 +2,16 @@ import java.io.*
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     val n = readLine().toInt()
-    val answer = arrayListOf<String>()
+    val answer = StringBuilder()
 
     repeat(n - 1) {
-        answer.add((it + 1).toString())
+        answer.append("${it + 1} ")
 
         if (it % 6 == 5) {
-            answer.add("Go!")
+            answer.append("Go! ")
         }
     }
 
-    answer.add("$n Go!")
-    print(answer.joinToString(" "))
+    answer.append("$n Go!")
+    print(answer)
 }
