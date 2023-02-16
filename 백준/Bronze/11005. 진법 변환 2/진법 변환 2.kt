@@ -6,5 +6,5 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     val n = token.nextToken().toLong()
     val b = token.nextToken().toInt()
 
-    print(n.toString(b).uppercase(Locale.getDefault()))
+    print(n.toString(b).uppercase())
 }
