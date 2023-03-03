@@ -1,9 +1,9 @@
 import java.io.*
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
-    val cnt = readLine().count { it == 'a' }
+    val cnt = readLine().length
 
-    if (cnt >= readLine().count { it == 'a' }) {
+    if (cnt >= readLine().length) {
         print("go")
     } else {
         print("no")
