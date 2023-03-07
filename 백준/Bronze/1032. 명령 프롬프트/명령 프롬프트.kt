@@ -2,15 +2,15 @@ import java.io.*
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     val n = readLine().toInt()
-    val file = readLine().toMutableList()
+    val name = readLine().toCharArray()
 
     repeat(n - 1) {
         readLine().forEachIndexed { idx, c ->
-            if (file[idx] != c) {
-                file[idx] = '?'
+            if (name[idx] != c) {
+                name[idx] = '?'
             }
         }
     }
 
-    print(file.joinToString(""))
+    print(name)
 }
