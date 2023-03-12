@@ -1,14 +1,14 @@
 import java.io.*
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
-    var time = 0
     var total = 0.0
+    var time = 0
 
     repeat(readLine().toInt()) {
         val (a, b, c) = readLine().split(" ")
 
-        time += b.toInt()
         total += b.toInt() * getScore(c)
+        time += b.toInt()
     }
 
     print(String.format("%.2f", total / time))
