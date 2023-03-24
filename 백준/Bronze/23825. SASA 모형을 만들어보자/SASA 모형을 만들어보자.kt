@@ -1,7 +1,8 @@
 import java.io.*
+import java.util.*
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
-    val (n, m) = readLine().split(" ").map { it.toLong() / 2 }
+    val token = StringTokenizer(readLine())
 
-    print(minOf(n, m))
+    print(minOf(token.nextToken().toInt(), token.nextToken().toInt()) / 2)
 }
