@@ -1,3 +1,1 @@
-fun main() {
-    print("A")
-}
+fun main() = print('A')
