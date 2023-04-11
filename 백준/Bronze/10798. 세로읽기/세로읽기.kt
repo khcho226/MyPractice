@@ -1,9 +1,9 @@
 import java.io.*
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
+    val answer = StringBuilder()
     val lines = mutableListOf<String>()
     var max = 0
-    val answer = StringBuilder()
 
     repeat(5) {
         val line = readLine()
