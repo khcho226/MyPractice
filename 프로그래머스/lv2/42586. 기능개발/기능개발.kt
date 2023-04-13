@@ -1,26 +1,22 @@
-import kotlin.math.ceil
+import kotlin.math.*
 
 class Solution {
     fun solution(progresses: IntArray, speeds: IntArray): IntArray {
-        var arr = intArrayOf()
-        var max = 0.0
-        var cnt = 1
-        
-        progresses.mapIndexed { idx, it -> ceil((100 - it).toDouble() / speeds[idx]) }
-            .forEach {
-                if (it > max) {
-                    if (max != 0.0) {
-                        arr = arr.plus(cnt)
-                        cnt = 1
-                    }
-                    
-                    max = it
-                    return@forEach
-                }
+        val arr = progresses.mapIndexed { idx, it -> ceil((100 - it).toDouble() / speeds[idx]) }
+        var answer = intArrayOf()
+        var max = arr.first()
+        var cnt = 0
 
+        arr.forEach {
+            if (it > max) {
+                answer = answer.plus(cnt)
+                max = it
+                cnt = 1
+            } else {
                 cnt++
             }
-    
-        return arr.plus(cnt)
+        }
+
+        return answer.plus(cnt)
     }
 }
