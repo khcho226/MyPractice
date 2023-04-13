@@ -1,10 +1,10 @@
 # [level 3] 섬 연결하기 - 42861 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42861?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42861?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 10.3 MB, 시간: 0.02 ms
+메모리: 63.5 MB, 시간: 25.32 ms
 
 ### 구분
 
