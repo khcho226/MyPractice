@@ -5,7 +5,7 @@ class Solution {
     fun solution(word: String): Int {
         dfs("")
         
-        return list.indexOf(list.first { it == word })
+        return list.indexOf(word)
     }
     
     fun dfs(input: String) {
