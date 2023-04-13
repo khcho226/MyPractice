@@ -1,0 +1,15 @@
+def solution(n, lost, reserve):
+    for i in range(1, n + 1):
+        if i in lost and i in reserve:
+            lost.remove(i)
+            reserve.remove(i)
+            
+    for i in range(1, n + 1):
+        if i in lost:
+            for j in [i - 1, i, i + 1]:
+                if 1 <= j <= n and j in reserve:
+                    lost.remove(i)
+                    reserve.remove(j)
+                    break
+                    
+    return n - len(lost)
