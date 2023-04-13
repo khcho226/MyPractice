@@ -4,21 +4,24 @@ class Solution {
     fun solution(bridge_length: Int, weight: Int, truck_weights: IntArray): Int {
         val bridge: Queue<Int> = LinkedList(List(bridge_length) { 0 })
         val waiting: Queue<Int> = LinkedList(truck_weights.toList())
-        var answer = 0
-        
+        var time = 0
+        var total = 0
+
         while (bridge.isNotEmpty()) {
-            answer++
+            time++
+            total -= bridge.peek()
             bridge.poll()
-            
+
             if (waiting.isNotEmpty()) {
-                if (bridge.sum() + waiting.peek() <= weight) {
+                if (total + waiting.peek() <= weight) {
+                    total += waiting.peek()
                     bridge.add(waiting.poll())
                 } else {
                     bridge.add(0)
                 }
             }
         }
-        
-        return answer
+
+        return time
     }
 }
