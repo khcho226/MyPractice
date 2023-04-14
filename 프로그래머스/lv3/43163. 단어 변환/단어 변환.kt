@@ -12,17 +12,7 @@ class Solution {
             val (now, cnt) = que.poll()
 
             for (i in words.indices) {
-                var temp = 0
-
-                if (visited[i].not()) {
-                    for (j in begin.indices) {
-                        if (now[j] != words[i][j]) {
-                            temp++
-                        }
-                    }
-                }
-
-                if (temp == 1) {
+                if (visited[i].not() && now.filterIndexed { idx, c -> c != words[i][idx] }.map { 1 }.sum() == 1) {
                     if (words[i] == target) {
                         answer = cnt + 1
                         break@loop
