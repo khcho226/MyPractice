@@ -8,7 +8,6 @@ class Solution {
             quotient = total / a
             total = b * quotient + total % a
             answer += b * quotient
-            
         }
         
         return answer
