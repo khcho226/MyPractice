@@ -1,26 +1,20 @@
 class Solution {
     fun solution(players: Array<String>, callings: Array<String>): Array<String> {
-        val arr = arrayListOf<String>().apply {
-            this.addAll(players)
-        }
-        val map = mutableMapOf<String, Int>().apply {
+        val map = hashMapOf<String, Int>().apply {
             players.forEachIndexed { idx, it ->
                 this[it] = idx
             }
         }
 
         callings.forEach {
-            val idx = map[it]
+            val idx = map[it]!!
 
-            map[it] = map[it]?.minus(1) ?: 0
-            map[arr[idx!! - 1]] = map[arr[idx - 1]]!! + 1
-
-            val temp = arr[idx - 1]
-
-            arr[idx - 1] = arr[idx]
-            arr[idx] = temp
+            map.replace(it, idx - 1)
+            map.replace(players[idx - 1], idx)
+            players[idx] = players[idx - 1]
+            players[idx - 1] = it
         }
 
-        return arr.toTypedArray()
+        return players
     }
 }
