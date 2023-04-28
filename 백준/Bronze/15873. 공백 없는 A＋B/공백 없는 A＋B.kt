@@ -3,7 +3,7 @@ fun main() {
     val a: String
     val b: String
 
-    if (ab.length == 4 || ab[1] == '0') {
+    if (ab[1] == '0') {
         a = ab.substring(0, 2)
         b = ab.substring(2)
     } else {
