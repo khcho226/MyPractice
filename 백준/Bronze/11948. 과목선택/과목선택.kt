@@ -1,10 +1,10 @@
-import java.util.*
-
 fun main() {
-    val queA = PriorityQueue<Int>(reverseOrder())
-    val queB = PriorityQueue<Int>(reverseOrder())
+    val a = readLine()!!.toInt()
+    val b = readLine()!!.toInt()
+    val c = readLine()!!.toInt()
+    val d = readLine()!!.toInt()
+    val e = readLine()!!.toInt()
+    val f = readLine()!!.toInt()
 
-    repeat(4) { queA.add(readLine()!!.toInt() )}
-    repeat(2) { queB.add(readLine()!!.toInt() )}
-    print(queA.poll() + queA.poll() + queA.poll() + queB.poll())
+    print(a + b + c + d - minOf(a, b, c, d) + maxOf(e, f))
 }
