@@ -5,7 +5,7 @@ fun main() {
 
     if (a + b + c != 180) {
         print("Error")
-    } else if (a == b && b == c && c == 60) {
+    } else if (a == b && b == c) {
         print("Equilateral")
     } else if (a == b || b == c || c == a) {
         print("Isosceles")
