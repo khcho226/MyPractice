@@ -9,8 +9,7 @@ class Solution {
 
         while (bridge.isNotEmpty()) {
             time++
-            total -= bridge.peek()
-            bridge.poll()
+            total -= bridge.poll()
 
             if (waiting.isNotEmpty()) {
                 if (total + waiting.peek() <= weight) {
