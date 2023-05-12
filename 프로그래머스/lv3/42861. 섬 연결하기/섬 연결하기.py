@@ -1,7 +1,7 @@
 def solution(n, costs):
-    answer = 0
     costs.sort(key=lambda x:x[2])
     connect = set([costs[0][0]])
+    answer = 0
     
     while len(connect) != n:
         for cost in costs:
