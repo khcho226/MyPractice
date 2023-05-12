@@ -10,14 +10,14 @@ def solution(operations):
         if a == "I":
             heapq.heappush(heap, int(b))
         else:
-            if len(heap) != 0:
+            if heap:
                 if b == "1":
                     heap = heapq.nlargest(len(heap), heap)[1:]
                     heapq.heapify(heap)
                 else:
                     heapq.heappop(heap)
         
-    if len(heap) == 0:
+    if not heap:
         heap = [0]
     
     return [max(heap), min(heap)]
