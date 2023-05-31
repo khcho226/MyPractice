@@ -3,7 +3,7 @@ fun main() {
     val c = readLine()!!.toInt()
     val n = readLine()!!.toInt()
 
-    if ((c - a) * n >= b && c >= a) {
+    if (a <= c && b <= (c - a) * n) {
         print(1)
     } else {
         print(0)
