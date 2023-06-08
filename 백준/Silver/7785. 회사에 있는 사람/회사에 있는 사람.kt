@@ -1,15 +1,20 @@
+import java.util.*
+
 fun main() {
-    val set = HashSet<String>()
+    val set = sortedSetOf<String>(reverseOrder())
 
     repeat(readLine()!!.toInt()) {
-        readLine()!!.split(" ").also {
-            if (it[1] == "enter") {
-                set.add(it[0])
+        StringTokenizer(readLine()).also {
+            val name = it.nextToken()
+            val type = it.nextToken()
+
+            if (type == "enter") {
+                set.add(name)
             } else {
-                set.remove(it[0])
+                set.remove(name)
             }
         }
     }
 
-    print(set.sortedDescending().joinToString("\n"))
+    print(set.joinToString("\n"))
 }
