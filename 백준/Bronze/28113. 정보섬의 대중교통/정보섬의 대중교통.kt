@@ -8,8 +8,8 @@ fun main() {
 
     println(
         when {
-            a < maxOf(n, b) -> "Bus"
-            a > maxOf(n, b) -> "Subway"
+            a < b -> "Bus"
+            a > b -> "Subway"
             else -> "Anything"
         }
     )
