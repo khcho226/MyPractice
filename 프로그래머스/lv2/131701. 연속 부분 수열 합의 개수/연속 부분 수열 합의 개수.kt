@@ -1,7 +1,7 @@
 class Solution {
     fun solution(elements: IntArray): Int {
         val nums = mutableSetOf<Int>()
-        val arr = elements.plus(elements).dropLast(1)
+        val arr = elements + elements
         
         for (i in elements.indices) {
             for (j in elements.indices) {
