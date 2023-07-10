@@ -1,35 +1,32 @@
 class Solution {
+    lateinit var nums: IntArray
+
     fun solution(want: Array<String>, number: IntArray, discount: Array<String>): Int {
         val sum = number.sum()
-        val nums = IntArray(want.size)
         var answer = 0
 
+        nums = IntArray(want.size)
+
         for (i in 0 until (sum - 1)) {
-            want.indexOf(discount[i]).also {
-                if (it != -1) {
-                    nums[it]++
-                }
-            }
+            rearrangeNums(want.indexOf(discount[i]), 1)
         }
 
         for (i in (sum - 1) until discount.size) {
-            want.indexOf(discount[i]).also {
-                if (it != -1) {
-                    nums[it]++
-                }
-            }
+            rearrangeNums(want.indexOf(discount[i]), 1)
 
             if (nums.contentEquals(number)) {
                 answer++
             }
 
-            want.indexOf(discount[i - sum + 1]).also {
-                if (it != -1) {
-                    nums[it]--
-                }
-            }
+            rearrangeNums(want.indexOf(discount[i - sum + 1]), -1)
         }
 
         return answer
+    }
+
+    fun rearrangeNums(idx: Int, n: Int) {
+        if (idx != -1) {
+            nums[idx] += n
+        }
     }
 }
