@@ -14,7 +14,7 @@ class Solution {
     }
     
     fun isPrime(num: Long): Boolean {
-        if (num <= 1L) {
+        if (num <= 1) {
             return false
         }
         
