@@ -5,13 +5,8 @@ class Solution {
         var answer = 0
 
         for (i in topping) {
-            if (i in mapB) {
-                mapB[i] = mapB[i]!! + 1
-            } else {
-                mapB[i] = 1
-            }
-
-            mapA[i] = mapA[i]!! - 1
+            mapA[i] = mapA.getOrDefault(i, 0) - 1
+            mapB[i] = mapB.getOrDefault(i, 0) + 1
 
             if (mapA[i] == 0) {
                 mapA.remove(i)
