@@ -2,7 +2,7 @@ import java.util.*
 
 lateinit var player: Array<IntArray>
 val visited = BooleanArray(9)
-val order = Array(9) { 0 }.also { it[3] = 0 }
+val order = IntArray(9)
 var maxScore = 0
 
 fun main() = with(System.`in`.bufferedReader()) {
