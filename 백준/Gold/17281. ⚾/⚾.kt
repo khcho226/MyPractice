@@ -1,7 +1,7 @@
 import java.util.*
 
 lateinit var player: Array<IntArray>
-val visited = Array(9) { false }
+val visited = BooleanArray(9)
 val order = Array(9) { 0 }.also { it[3] = 0 }
 var maxScore = 0
 
