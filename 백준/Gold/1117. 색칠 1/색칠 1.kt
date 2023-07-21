@@ -20,10 +20,10 @@ fun main() = with(System.`in`.bufferedReader()) {
                 area - (minOf(f, x2) - x1) * (y2 - y1) * (c + 1)
             }
         } else {
-            if (w <= x1 + f) {
+            if (w - f <= x1) {
                 area
             } else {
-                area - (minOf(w, f + x2) - f - x1) * (y2 - y1) * (c + 1)
+                area - (minOf(w - f, x2) - x1) * (y2 - y1) * (c + 1)
             }
         }
     )
