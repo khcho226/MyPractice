@@ -10,7 +10,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     val y1 = token.nextToken().toLong()
     val x2 = token.nextToken().toLong()
     val y2 = token.nextToken().toLong()
-    val area = (w * h - (x2 - x1) * (y2 - y1) * (c + 1))
+    val area = w * h - (x2 - x1) * (y2 - y1) * (c + 1)
 
     print(
         if (f <= w / 2) {
