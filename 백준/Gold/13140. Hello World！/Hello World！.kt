@@ -4,6 +4,8 @@ val visited = BooleanArray(10)
 val picked = mutableListOf<Int>()
 val nums = IntArray(10) { it }
 var n = 0
+var hello = 0
+var world = 0
 
 fun main() = with(System.`in`.bufferedReader()) {
     n = readLine().toInt()
@@ -29,9 +31,6 @@ fun perm(cnt: Int, depth: Int) {
 }
 
 fun calc() {
-    var hello = 0
-    var world = 0
-
     if (picked[0] == 0 || picked[4] == 0) {
         return
     }
