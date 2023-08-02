@@ -1,37 +1,30 @@
 import kotlin.math.*
 
-fun main() = with(System.`in`.bufferedReader()) {
+fun main(): Unit = with(System.`in`.bufferedReader()) {
     val n = readLine().toInt()
-    val line = readLine().toCharArray()
-    var cntM = 0
-    var cntW = 0
-
-    for (i in line.indices) {
-        if (line[i] == 'M') {
-            cntM++
+    val line = readLine().map {
+        if (it == 'M') {
+            1
         } else {
-            cntW++
-        }
-
-        if (abs(cntM - cntW) <= n) {
-            continue
-        }
-
-        if (i != line.lastIndex && line[i] != line[i + 1]) {
-            line[i + 1] = line[i]
-
-            if (line[i] == 'M') {
-                cntM--
-                cntW++
-            } else {
-                cntM++
-                cntW--
-            }
-        } else {
-            cntM--
-            break
+            -1
         }
     }
+    var cnt = 0
 
-    print(cntM + cntW)
+    line.indexOfFirst {
+        cnt += it
+        abs(cnt) > n + 1
+    }.also {
+        print(
+            if (it == -1) {
+                if (abs(cnt) != n + 1) {
+                    line.size
+                } else {
+                    line.size - 1
+                }
+            } else {
+                it - 1
+            }
+        )
+    }
 }
