@@ -1,40 +1,42 @@
 private lateinit var lst: List<Int>
-val nums = mutableListOf<Int>()
 var cnt = 0
 
 fun main(): Unit = with(System.`in`.bufferedReader()) {
     lst = readLine().split(" ").map { it.toInt() }
-    back(0)
+
+    for (i in 1..5) {
+        dfs(1, 1, i.check(lst[0]), i)
+    }
+
     print(cnt)
 }
 
-fun back(depth: Int) {
+fun dfs(row: Int, depth: Int, score: Int, last: Int) {
+    if (row == 3) {
+        return
+    }
+
     if (depth == 10) {
-        count()
+        if (score >= 5) {
+            cnt++
+        }
+
         return
     }
 
     for (i in 1..5) {
-        if (depth >= 2 && i == nums[depth - 1] && i == nums[depth - 2]) {
-            continue
-        }
-
-        nums.add(i)
-        back(depth + 1)
-        nums.removeLast()
+        dfs(
+            if (i == last) {
+                row + 1
+            } else {
+                1
+            }, depth + 1, score + i.check(lst[depth]), i
+        )
     }
 }
 
-fun count() {
-    var score = 0
-
-    lst.forEachIndexed { idx, it ->
-        if (nums[idx] == it) {
-            score++
-        }
-    }
-
-    if (score >= 5) {
-        cnt++
-    }
+fun Int.check(input: Int) = if (this == input) {
+    1
+} else {
+    0
 }
