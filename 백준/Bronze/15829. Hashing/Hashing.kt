@@ -1,12 +1,16 @@
-import kotlin.math.*
-
 fun main() = with(System.`in`.bufferedReader()) {
-    val l = readLine().toInt()
-    var hash = 0
+    val n = readLine().toInt()
+    var exp = 0L
+    var hash = 0L
 
     readLine().forEachIndexed { idx, c ->
-        hash += (31.0.pow(idx) * (c - 'a' + 1)).toInt() % 1234567891
+        exp = if (idx == 0) {
+            1L
+        } else {
+            exp * 31 % 1234567891
+        }
+        hash = (hash + (c - 'a' + 1) * exp) % 1234567891
     }
-    
+
     print(hash)
 }
