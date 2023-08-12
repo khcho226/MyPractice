@@ -1,4 +1,4 @@
-import java.util.StringTokenizer
+import java.util.*
 
 fun main() = with(System.`in`.bufferedReader()) {
     val token = StringTokenizer(readLine())
