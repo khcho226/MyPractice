@@ -1,13 +1,9 @@
 fun main() = with(System.`in`.bufferedReader()) {
-    val dir = arrayOf("S", "W", "N", "E")
-    var idx = 10
+    val dir = arrayOf("N", "E", "S", "W")
+    var idx = 0
 
     repeat(10) {
-        when (readLine()) {
-            "1" -> idx++
-            "3" -> idx--
-            else -> idx += 2
-        }
+        idx += readLine().toInt()
     }
 
     print(dir[idx % 4])
