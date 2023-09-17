@@ -10,16 +10,6 @@ fun main() = with(System.`in`.bufferedReader()) {
     val d = a * b
     val q = d / 100
     val r = d % 100
-    val first: Int
-    val second: Int
 
-    if (d >= 100) {
-        first = c + q
-        second = r
-    } else {
-        first = c
-        second = d
-    }
-
-    print("$a $b $c $d $q $r\n$first $second")
+    print("$a $b $c $d $q $r\n${c + q} $r")
 }
