@@ -8,8 +8,8 @@ def dfs(n, computers, i):
 def solution(n, computers):
     global visited
     
-    answer = 0
     visited = [False] * n
+    answer = 0
     
     for i in range(n):
         if not visited[i]:
