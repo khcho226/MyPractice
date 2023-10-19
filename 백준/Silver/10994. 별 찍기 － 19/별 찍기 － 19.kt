@@ -1,13 +1,16 @@
 fun main() = with(System.`in`.bufferedReader()) {
     var arr = mutableListOf("*")
+    val answer = StringBuilder()
 
     repeat(readLine().toInt() - 1) {
         arr = makeStar(arr)
     }
 
     arr.forEach {
-        println(it)
+        answer.append("$it\n")
     }
+    
+    print(answer)
 }
 
 fun makeStar(arr: MutableList<String>): MutableList<String> {
