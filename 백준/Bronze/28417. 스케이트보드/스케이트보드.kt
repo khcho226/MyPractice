@@ -1,12 +1,22 @@
+import java.util.*
+
 fun main() = with(System.`in`.bufferedReader()) {
     var score = 0
 
     repeat(readLine().toInt()) {
-        val arr = readLine().split(" ").map { it.toInt() }
-        val a1 = arr.subList(0, 2).sorted()
-        val a2 = arr.subList(2, 7).sorted()
+        val token = StringTokenizer(readLine())
+        val que = PriorityQueue<Int>(reverseOrder())
+        var total = maxOf(token.nextToken().toInt(), token.nextToken().toInt())
 
-        score = maxOf(score, a1[1] + a2[3] + a2[4])
+        repeat(5) {
+            que.offer(token.nextToken().toInt())
+        }
+
+        repeat(2) {
+            total += que.poll()
+        }
+
+        score = maxOf(score, total)
     }
 
     print(score)
