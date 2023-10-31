@@ -1,19 +1,23 @@
+import java.util.*
 import kotlin.math.*
 
 fun main() = with(System.`in`.bufferedReader()) {
-    val (bx, by) = readLine().split(" ").map { it.toInt() }
-    val (dx, dy) = readLine().split(" ").map { it.toInt() }
-    val (jx, jy) = readLine().split(" ").map { it.toInt() }
-    val bt = maxOf(abs(bx - jx), abs(by - jy))
-    val dt = abs(dx - jx) + abs(dy - jy)
+    val arr = arrayOf(IntArray(2), IntArray(2), IntArray(2)).also { a ->
+        repeat(3) { i ->
+            StringTokenizer(readLine()).also { t ->
+                a[i][0] = t.nextToken().toInt()
+                a[i][1] = t.nextToken().toInt()
+            }
+        }
+    }
+    val b = max(abs(arr[0][0] - arr[2][0]), abs(arr[0][1] - arr[2][1]))
+    val d = abs(arr[1][0] - arr[2][0]) + abs(arr[1][1] - arr[2][1])
 
     print(
-        if (bt < dt) {
-            "bessie"
-        } else if (bt > dt) {
-            "daisy"
-        } else {
-            "tie"
+        when {
+            b < d -> "bessie"
+            b > d -> "daisy"
+            else -> "tie"
         }
     )
 }
