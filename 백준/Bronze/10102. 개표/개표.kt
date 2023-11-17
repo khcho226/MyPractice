@@ -1,15 +1,7 @@
 fun main() = with(System.`in`.bufferedReader()) {
-    var cntA = 0
-    var cntB = 0
-
-    readLine()
-    readLine().forEach {
-        if (it == 'A') {
-            cntA++
-        } else {
-            cntB++
-        }
-    }
+    val n = readLine().toInt()
+    val cntA = readLine().count { it == 'A' }
+    val cntB = n - cntA
 
     print(
         when {
