@@ -54,7 +54,6 @@ class Solution {
 
         if (contents[x1][y1] == "" && contents[x2][y2] != "") {
             contents[x1][y1] = contents[x2][y2]
-            contents[x2][y2] = ""
         }
     }
 
