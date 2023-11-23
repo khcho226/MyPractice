@@ -26,25 +26,25 @@ class Solution {
             answer += maxOf(dIdx, pIdx) * 2
 
             while (dStack.isNotEmpty() && cnt > 0) {
-                val peek = dStack.pop()
+                dStack.pop().also {
+                    if (it.second > cnt) {
+                        dStack.push(Pair(it.first, it.second - cnt))
+                    }
 
-                if (peek.second > cnt) {
-                    dStack.push(Pair(peek.first, peek.second - cnt))
+                    cnt -= it.second
                 }
-
-                cnt -= peek.second
             }
 
             cnt = cap
 
             while (pStack.isNotEmpty() && cnt > 0) {
-                val peek = pStack.pop()
+                pStack.pop().also {
+                    if (it.second > cnt) {
+                        pStack.push(Pair(it.first, it.second - cnt))
+                    }
 
-                if (peek.second > cnt) {
-                    pStack.push(Pair(peek.first, peek.second - cnt))
+                    cnt -= it.second
                 }
-
-                cnt -= peek.second
             }
         }
 
