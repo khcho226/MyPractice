@@ -22,7 +22,9 @@ class Solution {
             }
         }
 
-        return totalArr.filter { it != 0 }.map { calcFee(fees, it) }.toIntArray()
+        return totalArr.filter { it != 0 }
+            .map { calcFee(fees, it) }
+            .toIntArray()
     }
 
     fun calcTime(lst: List<String>): Int {
