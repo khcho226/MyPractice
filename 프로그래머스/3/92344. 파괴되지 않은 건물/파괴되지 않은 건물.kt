@@ -1,6 +1,7 @@
 class Solution {
     fun solution(board: Array<IntArray>, skill: Array<IntArray>): Int {
         val arr = Array(board.size + 1) { IntArray(board[0].size + 1) }
+        var answer = 0
 
         skill.forEach {
             val degree = if (it[0] == 2) {
@@ -27,10 +28,12 @@ class Solution {
 
         for (i in board.indices) {
             for (j in board[0].indices) {
-                arr[i][j] += board[i][j]
+                if (board[i][j] + arr[i][j] > 0) {
+                    answer++
+                }
             }
         }
 
-        return arr.sumOf { it.count { it > 0 } }
+        return answer
     }
 }
