@@ -1,17 +1,13 @@
-import java.util.*
+import java.io.*
 
-fun main() {
+fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     val answer = StringBuilder()
-
-    repeat(readLine()!!.toInt()) {
-        StringTokenizer(readLine()).also { st ->
-            st.nextToken().also {
-                answer.append("$it $it")
-            }
-
-            answer.append("\n")
+    
+    repeat(readLine().toInt()) {
+        readLine().also {
+            answer.append("$it $it\n")
         }
     }
-
+    
     print(answer)
 }
