@@ -3,13 +3,13 @@ import java.util.*
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     val n = readLine().toInt()
-    val arr = arrayListOf<Int>()
+    val lst = LinkedList<Int>()
 
     StringTokenizer(readLine()).also { st ->
         for (i in 1..n) {
-            arr.add(st.nextToken().toInt(), i)
+            lst.add(st.nextToken().toInt(), i)
         }
     }
 
-    print(arr.reversed().joinToString(" "))
+    print(lst.reversed().joinToString(" "))
 }
