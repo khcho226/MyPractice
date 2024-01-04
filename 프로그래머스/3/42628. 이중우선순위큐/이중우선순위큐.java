@@ -12,10 +12,10 @@ class Solution {
                 maxQue.offer(Integer.parseInt(o[1]));
                 minQue.offer(Integer.parseInt(o[1]));
             } else {
-                if (o[1].equals("1")) {
-                    minQue.remove(maxQue.poll());
-                } else {
+                if (o[1].equals("-1")) {
                     maxQue.remove(minQue.poll());
+                } else {
+                    minQue.remove(maxQue.poll());
                 }
             }
         }
