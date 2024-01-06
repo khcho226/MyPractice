@@ -1,5 +1,3 @@
-import java.io.*
-
 class Solution {
     fun solution(game_board: Array<IntArray>, table: Array<IntArray>): Int {
         val len = game_board.size
