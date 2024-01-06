@@ -14,11 +14,11 @@ class Solution {
                 total += mid / time;
             }
 
-            if (total >= n) {
+            if (total < n) {
+                l = mid + 1;
+            } else {
                 r = mid - 1;
                 answer = mid;
-            } else {
-                l = mid + 1;
             }
         }
 
