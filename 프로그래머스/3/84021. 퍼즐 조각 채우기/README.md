@@ -1,10 +1,10 @@
 # [level 3] 퍼즐 조각 채우기 - 84021 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/84021?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/84021?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 70.8 MB, 시간: 0.18 ms
+메모리: 61.8 MB, 시간: 0.44 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 1월 6일 22:35:30
+2024년 1월 6일 23:28:19
 
 ### 문제 설명
 
