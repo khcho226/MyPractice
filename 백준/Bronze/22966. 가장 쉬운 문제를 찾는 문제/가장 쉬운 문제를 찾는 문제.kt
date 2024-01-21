@@ -2,13 +2,19 @@ import java.io.*
 import java.util.*
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
-    val pq = PriorityQueue<Pair<String, String>> { o1, o2 -> o1.second.compareTo(o2.second) }
+    var maxT = ""
+    var maxD = Int.MAX_VALUE
 
     repeat(readLine().toInt()) {
-        StringTokenizer(readLine()).also { st ->
-            pq.offer(Pair(st.nextToken(), st.nextToken()))
+        val st = StringTokenizer(readLine())
+        val t = st.nextToken()
+        val d = st.nextToken().toInt()
+
+        if (maxD > d) {
+            maxT = t
+            maxD = d
         }
     }
 
-    print(pq.poll().first)
+    print(maxT)
 }
