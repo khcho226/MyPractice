@@ -1,8 +1,6 @@
 import java.io.*
 import java.util.*
 
-val info = HashMap<String, Int>()
-
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     val token = StringTokenizer(readLine())
     val n = token.nextToken().toInt()
