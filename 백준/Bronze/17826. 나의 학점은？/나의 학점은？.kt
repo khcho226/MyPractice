@@ -15,20 +15,14 @@ fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     }
 
     print(
-        if (cnt <= 5) {
-            "A+"
-        } else if (cnt <= 15) {
-            "A0"
-        } else if (cnt <= 30) {
-            "B+"
-        } else if (cnt <= 35) {
-            "B0"
-        } else if (cnt <= 45) {
-            "C+"
-        } else if (cnt <= 48) {
-            "C0"
-        } else {
-            "F"
+        when (cnt) {
+            in 1..5 -> "A+"
+            in 6..15 -> "A0"
+            in 16..30 -> "B+"
+            in 31..35 -> "B0"
+            in 36..45 -> "C+"
+            in 46..48 -> "C0"
+            else -> "F"
         }
     )
 }
