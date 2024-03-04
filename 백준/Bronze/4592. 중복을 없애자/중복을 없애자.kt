@@ -1,6 +1,5 @@
 import java.io.*
 import java.util.*
-import kotlin.collections.*
 
 fun main() = BufferedReader(InputStreamReader(System.`in`)).run {
     val sb = StringBuilder()
