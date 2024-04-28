@@ -1,10 +1,10 @@
 # [level 3] 이중우선순위큐 - 42628 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42628?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42628?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 73.5 MB, 시간: 0.48 ms
+메모리: 62 MB, 시간: 8.45 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 1월 4일 15:53:29
+2024년 04월 28일 13:19:11
 
 ### 문제 설명
 
