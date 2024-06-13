@@ -1,22 +1,9 @@
 class Solution {
     fun solution(n: Int): Int {
-        var num = 1
-        var sum = 0
-        
-        if (n % 2 == 1) {
-            while (num <= n) {
-                sum += num
-                num += 2
-            }
+        return if (n % 2 == 1) {
+            (1..n step 2).sum()
         } else {
-            num++
-            
-            while (num <= n) {
-                sum += num * num
-                num += 2
-            }
+            (2..n step 2).sumOf { it * it }
         }
-        
-        return sum
     }
 }
