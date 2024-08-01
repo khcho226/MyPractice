@@ -1,10 +1,10 @@
 # [level 0] 옷가게 할인 받기 - 120818 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120818) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120818?language=cpp) 
 
 ### 성능 요약
 
-메모리: 62.1 MB, 시간: 0.01 ms
+메모리: 4.18 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 05월 01일 20:38:26
+2024년 08월 01일 19:52:11
 
 ### 문제 설명
 
