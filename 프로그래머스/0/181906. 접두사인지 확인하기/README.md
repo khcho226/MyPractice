@@ -1,10 +1,10 @@
 # [level 0] 접두사인지 확인하기 - 181906 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181906) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181906?language=cpp) 
 
 ### 성능 요약
 
-메모리: 61.6 MB, 시간: 8.07 ms
+메모리: 4.2 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 05월 12일 23:13:20
+2024년 08월 19일 16:51:33
 
 ### 문제 설명
 
