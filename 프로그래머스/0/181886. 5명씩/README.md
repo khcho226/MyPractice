@@ -1,10 +1,10 @@
 # [level 0] 5명씩 - 181886 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181886?language=kotlin) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181886?language=cpp) 
 
 ### 성능 요약
 
-메모리: 63.5 MB, 시간: 27.49 ms
+메모리: 3.68 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 08일 13:08:58
+2024년 09월 24일 14:39:37
 
 ### 문제 설명
 
